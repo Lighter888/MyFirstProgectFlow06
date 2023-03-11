@@ -71,7 +71,16 @@ public class HW06_2 {
 //        String[][] array = {{“Привет”, “всем”, “кто”}, {“изучает”, “язык”, “программирования”}, {“java”}};
 //        необходимо подсчитать количество строк в массиве, которые не содержат буквы “е”.
 
-
-
+        String[][] array = {{"Привет", "всем", "кто"}, {"изучает", "язык", "программирования"}, {"java"}};
+        int count1 = 0;
+        for (String[] strings : array) {
+            for (String string : strings) {
+                boolean A = string.contains("е");
+                if (!A) {
+                    count1++;
+                }
+            }
+        }
+        System.out.println("количество строк которые не содержат 'e' равно " + count1);
     }
 }
