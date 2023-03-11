@@ -60,6 +60,7 @@ public class HW05 {
 //        3 2 1 0 1 2 3
 //        2 1 0 1 2
 //        1 0 1
+
 //        0
         int k = 10;
         for (int i = 0; i < 10; i++) {
