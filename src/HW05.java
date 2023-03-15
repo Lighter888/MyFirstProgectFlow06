@@ -37,7 +37,7 @@ public class HW05 {
 //                                        0  1
 //                                            0
 //        int k = 10;
-//        for (int i = 0; i < 10; i++) {
+//        for (int i = 0; i < k; i++) {
 //            System.out.println();
 //            System.out.print("  ".repeat(i));
 //            k--;

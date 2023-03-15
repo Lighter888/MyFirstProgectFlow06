@@ -75,8 +75,7 @@ public class HW06_2 {
         int count1 = 0;
         for (String[] strings : array) {
             for (String string : strings) {
-                boolean A = string.contains("е");
-                if (!A) {
+                if (!(string.contains("е"))) {
                     count1++;
                 }
             }
