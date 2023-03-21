@@ -12,9 +12,9 @@ public class HW06_2 {
 
         String str = "Перестановочный алгоритм быстрого действия";
         char [] charS = str.toCharArray();
-        for (int i = 0; i < charS.length; i++) {
-            if (charS[i] == 'о') {
-                System.out.print(charS[i]);
+        for (char aChar : charS) {
+            if (aChar == 'о') {
+                System.out.print(aChar);
             }
         }
 
@@ -74,7 +74,7 @@ public class HW06_2 {
         String[][] array = {{"Привет", "всем", "кто"}, {"изучает", "язык", "программирования"}, {"java"}};
         int count1 = 0;
         for (String[] strings : array) {
-            for (String string : strings) {
+            for (String string: strings) {
                 if (!(string.contains("е"))) {
                     count1++;
                 }

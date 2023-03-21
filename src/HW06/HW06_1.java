@@ -23,7 +23,7 @@ public class HW06_1 {
 //        int[] array = {9, 2, 6, 4, 5, 12, 7, 8, 6};
 //        необходимо вывести максимальное значение массива.
 
-        int max = arr1[0];
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr1.length; i++) {
             if (arr1[i] > max){
                 max = arr1[i];
@@ -37,7 +37,7 @@ public class HW06_1 {
 //        int[] array = {9, 2, 6, 4, 5, 12, 7, 8, 6};
 //        необходимо вывести минимальное значение массива.
         int[] arr3= {9, 2, 6, 4, 5, 12, 7, -8, 6};
-        int min = arr3[0];
+        int min = Integer.MAX_VALUE;
         for (int i = 0; i < arr3.length; i++) {
             if (arr3[i] < min){
                 min = arr3[i];
