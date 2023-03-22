@@ -2,14 +2,14 @@ package HW07;
 
 public class Employee extends Person {
 
-    int Salary;
-    public Employee(String Name, int Age, String Gender, int Salary) {
-        super(Name, Age, Gender);
-        this.Salary = Salary;
+    double salary;
+    public Employee(String name, int age, String gender, double salary) {
+        super(name, age, gender);
+        this.salary = salary;
     }
 
     public boolean isSameName(Employee employee) {
-        if name
+        return  (employee.name.equals(name));
 
     }
 }

@@ -2,21 +2,21 @@ package HW07;
 
 public class Person {
 
-    String Name;
-    int Age;
-    String Gender;
+    String name;
+    int age;
+    String gender;
 
-    public Person(String Name, int Age, String Gender) {
-        this.Name = Name;
-        this.Age = Age;
-        this.Gender = Gender;
+    public Person(String name, int age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
     }
 
     public String getName() {
-        if (Gender.equals("Male")) {
-            return "Mr " + Name;
+        if (gender.equals("Male")) {
+            return "Mr " + name;
         } else {
-            return "Mrs " + Name;
+            return "Mrs " + name;
         }
     }
 
