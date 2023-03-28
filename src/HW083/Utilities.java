@@ -1,8 +1,10 @@
 package HW083;
 
+import java.util.Objects;
+
 public class Utilities {
 
-    public String findEmployee(HW083.Employee[] employeesArray, String name) {
+    public static String findEmployee(HW083.Employee[] employeesArray, String name) {
         for (HW083.Employee employee : employeesArray) {
             if (name.equals(employee.getName())) {
                 return name;
@@ -10,7 +12,7 @@ public class Utilities {
         }
         return "Не найдено";
     }
-    public String findEmployeeDetail(HW083.Employee[] employeesArray, String str) {
+    public static String findEmployeeDetail(HW083.Employee[] employeesArray, String str) {
         if (str.isEmpty()) {
             return "Не найдено";
         }
@@ -21,32 +23,32 @@ public class Utilities {
         }
         return "Не найдено";
     }
-    public double getSumSalary(HW083.Employee[] employeesArray) {
+    public static double getSumSalary(Employee[] employeesArray) {
         double sum = 0;
-        for (HW083.Employee employee : employeesArray)
-            sum += employee.getBaseSalary();
+        for (Employee employee : employeesArray)
+            sum += employee.getSalary();
         return sum;
     }
 
-    public double findMinSalary(HW083.Employee[] employeesArray) {
-        double min = Integer.MAX_VALUE;
-        for (int i = 0; i < employeesArray.length; i++) {
-            if (min > employeesArray[i].getBaseSalary()) {
-                min = employeesArray[i].getBaseSalary();
+    public static double findMinSalary(HW083.Employee[] employeesArray) {
+        double min = Double.POSITIVE_INFINITY;
+        for (Employee employee : employeesArray) {
+            if (min > employee.getSalary()) {
+                min = employee.getSalary();
             }
         }
         return min;
     }
-    public double findMaxSalary(HW083.Employee[] employeesArray) {
-        double max = Integer.MIN_VALUE;
-        for (int i = 0; i < employeesArray.length; i++) {
-            if (max < employeesArray[i].getBaseSalary()) {
-                max = employeesArray[i].getBaseSalary();
+    public static double findMaxSalary(HW083.Employee[] employeesArray) {
+        double max = Double.NEGATIVE_INFINITY;
+        for (Employee employee : employeesArray) {
+            if (max < employee.getSalary()) {
+                max = employee.getSalary();
             }
         }
         return max;
     }
-    public int findMinNumberOfSubordinates(Manager[] managersArray) {
+    public static int findMinNumberOfSubordinates(Manager[] managersArray) {
         int min = managersArray[0].getNumberOfSubordinates();
         for (Manager manager : managersArray) {
             if (min > manager.getNumberOfSubordinates()) {
@@ -56,7 +58,7 @@ public class Utilities {
         return  min;
     }
 
-    public int findMaxNumberOfSubordinates(Manager[] managersArray) {
+    public static int findMaxNumberOfSubordinates(Manager[] managersArray) {
         int max = managersArray[0].getNumberOfSubordinates();
         for (Manager manager : managersArray) {
             if (max < manager.getNumberOfSubordinates()) {
@@ -65,24 +67,25 @@ public class Utilities {
         }
         return  max;
     }
-    public double findMaxBonusOfManagers(Manager[] managersArray) {
-        double maxBonus = managersArray[0].getSalaryManager() - managersArray[0].getBaseSalary();
-        for (Manager manager : managersArray) {
-            if (maxBonus < (manager.getSalaryManager() - manager.getBaseSalary())) {
-                maxBonus = (manager.getSalaryManager() - manager.getBaseSalary());
+    public static double findMaxBonusOfManagers(Manager[] array) {
+        double maxBonus = Double.NEGATIVE_INFINITY;
+        for (int i = 0; i < array.length ; i++) {
+            double bonus = array[i].getBaseSalary() * (array[i].getNumberOfSubordinates() *  1.00) / (100 * 3);
+            if (maxBonus < bonus) {
+                maxBonus = bonus;
             }
         }
         return maxBonus;
     }
-    public double findMinBonusOfManagers(Manager[] managersArray) {
-        double minBonus = managersArray[0].getSalaryManager() - managersArray[0].getBaseSalary();
-        for (Manager manager : managersArray) {
-            if (minBonus > (manager.getSalaryManager() - manager.getBaseSalary())) {
-                minBonus = (manager.getSalaryManager() - manager.getBaseSalary());
+    public static double findMinBonusOfManagers(Manager[] managers) {
+        double minBonus = Double.POSITIVE_INFINITY;
+        for (Manager manager :managers) {
+            double bonus = manager.getBaseSalary() * (manager.getNumberOfSubordinates() * 1.00) / (100 * 3);
+            if (minBonus > bonus) {
+                minBonus = bonus;
             }
         }
         return minBonus;
     }
-
 }
 

@@ -14,7 +14,7 @@ public class Employee {
         return name;
     }
 
-    public double getBaseSalary() {
+    public double getSalary() {
         return baseSalary;
     }
 

@@ -7,7 +7,7 @@ public class Worker extends Employee{
         super(name, baseSalary);
     }
 
-    public double getSalaryWorker() {
-        return getBaseSalary();
+    public double getSalary() {
+        return super.getSalary();
     }
 }

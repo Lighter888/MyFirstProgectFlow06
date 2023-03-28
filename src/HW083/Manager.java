@@ -1,11 +1,15 @@
 package HW083;
 
-public class Manager extends Employee{
+public class Manager extends Worker{
 
     private int numberOfSubordinates;
+
     public Manager(String name, double baseSalary, int numberOfSubordinates) {
         super(name, baseSalary);
         this.numberOfSubordinates = numberOfSubordinates;
+    }
+    public Manager(String name, double baseSalary) {
+        super(name, baseSalary);
     }
 
     public int getNumberOfSubordinates() {
@@ -16,10 +20,15 @@ public class Manager extends Employee{
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
-    public double getSalaryManager() {
-        double salaryManager = getBaseSalary() + (getBaseSalary() * ((getNumberOfSubordinates() * 1.00) / (100 * 3)));
+    @Override
+    public double getSalary() {
+        double salaryManager = super.getSalary() + (super.getSalary() * ((getNumberOfSubordinates() * 1.00) / (100 * 3)));
         if (!(salaryManager == 0)) {
             return salaryManager;
-        } else return getBaseSalary();
+        } else return super.getSalary();
+    }
+
+    public double getBaseSalary(){
+        return super.getSalary();
     }
 }
