@@ -57,7 +57,6 @@ public class Utilities {
         }
         return  min;
     }
-
     public static int findMaxNumberOfSubordinates(Manager[] managersArray) {
         int max = managersArray[0].getNumberOfSubordinates();
         for (Manager manager : managersArray) {
